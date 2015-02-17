@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Text;
 using System.IO;
+using System.Collections.Generic;
 
 public class GameCore : MonoBehaviour 
 {
@@ -20,12 +21,14 @@ public class GameCore : MonoBehaviour
     public int currentCol;
     private int turnsLeft;
     private int boardSize = 8;
+    public List<KeyValuePair<int, int>> MovesList;
 
     public ReadGameboard boardReader;
 
 	// Use this for initialization
 	void Start () 
     {
+        MovesList = new List<KeyValuePair<int, int>>();
         turnsLeft = 56;
 
         turn = "red";
